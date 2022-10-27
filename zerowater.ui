@@ -1,0 +1,696 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="ttk.Labelframe" id="set_Frame">
+    <property name="height">200</property>
+    <property name="text" translatable="yes">Mobile Hooking v0.1 by zer0water</property>
+    <property name="width">500</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="dev_Label">
+        <property name="text" translatable="yes">Device</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="dev_Combo">
+        <property name="state">readonly</property>
+        <property name="width">25</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="dev_Btn">
+        <property name="command">on_device_clicked</property>
+        <property name="text" translatable="yes">Search</property>
+        <property name="width">25</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="Separator_1">
+        <property name="orient">horizontal</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">3</property>
+          <property name="ipadx">180</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="prlist_Label">
+        <property name="cursor">arrow</property>
+        <property name="text" translatable="yes">Process</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="prlist_Combo">
+        <property name="validate">focus</property>
+        <property name="width">25</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="columnspan">1</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="prlist_Btn">
+        <property name="command">on_process_clicked</property>
+        <property name="text" translatable="yes">Search</property>
+        <property name="width">25</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="hcls_Label">
+        <property name="text" translatable="yes">HookClass</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="hfnc_Label">
+        <property name="text" translatable="yes">HookFunc</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="hkcnt_Label">
+        <property name="font">TkDefaultFont</property>
+        <property name="text" translatable="yes">HookParamCount
+	(Max 10)</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">6</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="hptype_Label">
+        <property name="text" translatable="yes">HookParamType</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">7</property>
+          <property name="sticky">sw</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num1_Label">
+        <property name="text" translatable="yes">1</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">8</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num2_Label">
+        <property name="text" translatable="yes">2</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">9</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num3_Label">
+        <property name="text" translatable="yes">3</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">10</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num4_Label">
+        <property name="text" translatable="yes">4</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">11</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num5_Label">
+        <property name="text" translatable="yes">5</property>
+        <property name="underline">0</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">12</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num6_Label">
+        <property name="text" translatable="yes">6</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">13</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num7_Label">
+        <property name="text" translatable="yes">7</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">14</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num8_Label">
+        <property name="text" translatable="yes">8</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">15</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num9_Label">
+        <property name="text" translatable="yes">9</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">16</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="num10_Label">
+        <property name="text" translatable="yes">10</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">17</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="hpname_Label">
+        <property name="text" translatable="yes">HookParamName</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">7</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hcls_Entry">
+        <property name="font">TkDefaultFont</property>
+        <property name="takefocus">false</property>
+        <property name="width">82</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="columnspan">3</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hfnc_Entry">
+        <property name="width">82</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="columnspan">3</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkcnt_Entry">
+        <property name="width">55</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">6</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Checkbutton" id="cntzero_Check">
+        <property name="command">on_cntzero_change</property>
+        <property name="offvalue">0</property>
+        <property name="onvalue">1</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">Param Zero(0)</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="propagate">True</property>
+          <property name="row">6</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype1_Entry">
+        <property name="exportselection">true</property>
+        <property name="state">normal</property>
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">8</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype2_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">9</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype3_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">10</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype4_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">11</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype5_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">12</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype6_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">13</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype7_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">14</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype8_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">15</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype9_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">16</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkptype10_Entry">
+        <property name="width">27</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">17</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname1_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">8</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname2_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">9</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname3_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">10</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname4_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">11</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname5_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">12</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname6_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">13</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname7_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">14</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname8_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">15</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname9_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">16</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="hkpname10_Entry">
+        <property name="width">54</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">17</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="hfncadd_Btn">
+        <property name="command">on_hookadd_click</property>
+        <property name="text" translatable="yes">Hooking Add</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">1</property>
+          <property name="propagate">True</property>
+          <property name="row">18</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="hookcode_Frame">
+        <property name="height">200</property>
+        <property name="relief">flat</property>
+        <property name="text" translatable="yes">HookingCode</property>
+        <property name="width">500</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">4</property>
+          <property name="propagate">True</property>
+          <property name="row">19</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="hookcode_Text">
+            <property name="height">17</property>
+            <property name="selectborderwidth">0</property>
+            <property name="width">95</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Scrollbar" id="hookcode_xScroll">
+            <property name="orient">horizontal</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">1</property>
+              <property name="ipadx">200</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="rowspan">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Scrollbar" id="hookcode_yScroll">
+            <property name="orient">vertical</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="ipady">80</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="hookcode_run">
+            <property name="command">on_hookstart_click</property>
+            <property name="text" translatable="yes">Hooking Start !!</property>
+            <property name="width">95</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="hooklog_Frame">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Log</property>
+        <property name="width">500</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">4</property>
+          <property name="propagate">True</property>
+          <property name="row">20</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="hooklog_Text">
+            <property name="background">#a0a0a0</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="height">8</property>
+            <property name="selectborderwidth">0</property>
+            <property name="width">95</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Scrollbar" id="hooklog_xScroll">
+            <property name="orient">horizontal</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="ipadx">200</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Scrollbar" id="hooklog_yScroll">
+            <property name="orient">vertical</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="ipady">35</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="sslpinadd_Btn">
+        <property name="command">on_sslpin_click</property>
+        <property name="compound">top</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">SSL Pinning(Andoid)</property>
+        <property name="width">18</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">18</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="clear_Btn">
+        <property name="command">on_clear_clicked</property>
+        <property name="text" translatable="yes">Clear</property>
+        <property name="width">15</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">18</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="arch_Combo">
+        <layout>
+          <property name="column">3</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="dump_Btn">
+        <property name="command">on_dump_click</property>
+        <property name="text" translatable="yes">Memory Dump</property>
+        <property name="width">25</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
